@@ -1,0 +1,27 @@
+<div class="author">
+    <h1 class="author__heading">Make it Simple!</h1>
+
+</div>
+
+
+<img src="/img/hero-image.webp" class="hero-img" width="981" height="528">
+
+
+<section class="article">
+    <h2 clss="article__heading">Latest Posts</h2>
+
+    <ul class="article-ul">
+
+       <% data.forEach(post => {  %>
+
+        <li>
+            <a href="/post/<%= post._id %>">
+                <span><%= post.title %></span>
+                <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+            </a>
+        </li>
+        <% }) %>
+    </ul>
+
+    <a href="/" class="pagination">&lt; View Older Posts</a>
+</section>
